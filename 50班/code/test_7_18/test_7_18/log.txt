@@ -1,0 +1,10 @@
+file:c:\code\50°à\code\test_7_18\test_7_18\test.c line:12 date:Jul 18 2018 time:11:34:07 i=0
+file:c:\code\50°à\code\test_7_18\test_7_18\test.c line:12 date:Jul 18 2018 time:11:34:07 i=1
+file:c:\code\50°à\code\test_7_18\test_7_18\test.c line:12 date:Jul 18 2018 time:11:34:07 i=2
+file:c:\code\50°à\code\test_7_18\test_7_18\test.c line:12 date:Jul 18 2018 time:11:34:07 i=3
+file:c:\code\50°à\code\test_7_18\test_7_18\test.c line:12 date:Jul 18 2018 time:11:34:07 i=4
+file:c:\code\50°à\code\test_7_18\test_7_18\test.c line:12 date:Jul 18 2018 time:11:34:07 i=5
+file:c:\code\50°à\code\test_7_18\test_7_18\test.c line:12 date:Jul 18 2018 time:11:34:07 i=6
+file:c:\code\50°à\code\test_7_18\test_7_18\test.c line:12 date:Jul 18 2018 time:11:34:07 i=7
+file:c:\code\50°à\code\test_7_18\test_7_18\test.c line:12 date:Jul 18 2018 time:11:34:07 i=8
+file:c:\code\50°à\code\test_7_18\test_7_18\test.c line:12 date:Jul 18 2018 time:11:34:07 i=9
