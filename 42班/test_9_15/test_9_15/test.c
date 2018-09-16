@@ -4,24 +4,47 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include<stdio.h>
 int main()
 {
-	printf("%c\n", '\x045');//
-	//printf("%d\n", strlen("abcdef"));//
-	//printf("%d\n", strlen("c:\test\32\test.c"));//12 15 14 11 13 
+	int i=100,count=0,j;
+	for(i=100;i<=200;i++)
+	{
+		for(j=1;j<=i;i++)
+		{
+			if(i%j==0)
+			{
+				count++;
+			}
 
-
-	//c:\test\test.c
-
-	//printf("c:\\test\\test.c\n");
-	//printf("(are you ok\?\?)\n");
-	//printf("%c\n", '\'');
-	//printf("%s", "\"");
-	//printf("\a\a\a\a\a\a\a\a\a");
-
+		}
+		if(count>2)
+		{
+			printf("%d ",i);
+		}
+	}
 
 	return 0;
 }
+// 
+// int main()
+// {
+// 	printf("%c\n", '\x045');//
+// 	//printf("%d\n", strlen("abcdef"));//
+// 	//printf("%d\n", strlen("c:\test\32\test.c"));//12 15 14 11 13 
+// 
+// 
+// 	//c:\test\test.c
+// 
+// 	//printf("c:\\test\\test.c\n");
+// 	//printf("(are you ok\?\?)\n");
+// 	//printf("%c\n", '\'');
+// 	//printf("%s", "\"");
+// 	//printf("\a\a\a\a\a\a\a\a\a");
+// 
+// 
+// 	return 0;
+// }
 //
 //int main()
 //{
