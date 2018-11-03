@@ -4,6 +4,167 @@
 #include <windows.h>
 
 
+#include "stdio.h"
+#define MAXSIZE 1000
+//typedef struct student
+//{
+//	int num[10];
+//	char nam[20];
+//	int  score;
+//}school;
+typedef struct made
+{  
+	int date[MAXSIZE];
+	int last;
+}SequenList;//初始化 
+
+void Init_SequenList(SequenList *p)
+{
+	p->last=0;
+}
+void MAXadd(SequenList *p)
+{  
+	int i,weizhi=0,max=p->date[0];
+	for(i=1;i<p->last;i++)
+	{  
+		if (max<p->date[i] )
+		{
+			max=p->date[i];
+			weizhi=i;	
+		}
+	}	
+	printf("max=%d,位置是第%d位",max,weizhi+1);
+}
+
+
+void charu(SequenList *p)
+{  
+	int i,x;
+	int j;
+	printf("请输入i:\n");
+	scanf("%d",&i);
+	printf("请输入x:\n");
+	scanf("%d",&x);
+	for(j=p->last;j>i;j--)
+	{
+		p->date[j]=p->date[j-1];
+	}
+	p->date[i]=x;
+	p->last++;
+	printf("插入后：\n");
+	for(j=0;j<p->last;j++)
+		printf("%d",p->date[j]);
+}
+
+void desor(SequenList *p)
+{  
+	int i,pd=1,j,m,key;
+	for(i=0;i<p->last;i++)
+	if(p->date[i]<p->date[i+1])
+	{
+		printf("顺序表不是降序！\n");
+		pd=0;
+		break;
+	}
+	if(pd==1)
+	{
+		printf("请输入key的值：\n");
+		scanf("%d",&key);
+		for(j=0;j<p->last;j++)
+		{
+			if(p->date[j]<=key) break;
+		}   
+		for(m=p->last;m>p->date[j];m--) 
+		{   
+			p->date[m]=p->date[m-1];
+		} 
+		p->date[j]=key;
+		p->last++;
+	}
+}
+
+void statistics(SequenList *p)
+{ 
+	int i = 0,l=0,x = 0;
+	printf("请输入x的值：\n");
+	scanf("%d",x);
+	for (i=0;i<p->last;i++)
+	{
+		if(p->date[i]==x)
+	l++;
+	}
+	printf("x出现的次数为%d次!\n",l);
+}
+
+void delspe(SequenList *p)
+{ 
+	int i = 0,x = 0,j = 0;
+	printf("请输入X的值：\n");
+	scanf("%d",x);
+	for(i=0;i<p->last;i++)
+	{
+		if(p->date[i]==x)
+		{
+			for(j=p->last;j>=p->date[i];j--)
+			{
+				p->date[j-1]=p->date[j];     
+			}
+			p->last--;
+		}
+	}
+}
+
+void del(SequenList *p)
+{
+	int i = 0,j = 0;
+	printf("请输入位置：\n");
+	scanf("%d",i);
+	for(j=p->date[i];j<=p->last;j--)
+		p->date[j-1]=p->date[j];
+
+	p->last--;
+
+	for(i=0;i<p->last;i--)
+	{
+		printf("%d",p->date[i]);
+	}
+}
+
+int main()
+{
+	SequenList sl;
+	int l = 0;
+	Init_SequenList(&sl);
+	printf("请输入数据（-520结束）");
+	while(1)
+	{
+		scanf("%d",&sl.date[sl.last]) ;
+		sl.last++;
+		if(sl.date[sl.last-1]==-520)
+		break;
+	}
+	sl.last--;
+	printf("****************请选择你需要的功能*******************\n");
+	printf("***********1.输出顺序表中最大的数据和位置************\n");
+	printf("***********2.在顺序表中的第i个位置插入x  ************\n");
+	printf("***********3.若顺序表中降序，则插入key使原序不变************\n");
+	printf("***********4.统计顺序表中值为x的结点个数************\n");
+	printf("***********5.删除顺序表中所有与指定值x相同的结点************\n");
+	printf("***********6.从顺序表中删除第i个位置上的元素************\n");
+	scanf("%d",&l) ;
+	if(l==1) MAXadd(&sl);
+	if(l==2)charu(&sl);
+	if(l==3)desor(&sl);
+	if(l==4)statistics(&sl);
+	if(l==5)delspe(&sl);
+	if(l==6)del(&sl);
+	return 0;
+}
+
+
+
+
+
 //(-1)^s * 2 * 2^-127
 
 
