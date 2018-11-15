@@ -67,6 +67,38 @@ int GetMineCount(char mine[ROWS][COLS], int x, int y)
 	mine[x-1][y+1] - 8*'0';
 }
 
+void Spread(char mine[ROWS][COLS], char show[ROWS][COLS], int x, int y)
+{
+	int offset_x = 0;
+	int offset_y = 0;
+	int count = 0;
+	//便利周围坐标
+	for(offset_x=-1; offset_x<=1; offset_x++)
+	{
+		for(offset_y=-1; offset_y<=1; offset_y++)
+		{
+			//如果这个坐标不是雷
+			if(mine[x+offset_x][y+offset_y] == '0')
+			{
+				//统计周围雷的个数
+				count = GetMineCount(mine, x+offset_x, y+offset_y);
+				if(count == 0)
+				{
+					if(show[x+offset_x][y+offset_y] == '*')
+					{
+						show[x+offset_x][y+offset_y] = ' ';
+						Spread(mine, show, x+offset_x, y+offset_y);
+					}
+				}
+				else
+				{
+					show[x+offset_x][y+offset_y] = count+'0';
+				}
+			}
+		}
+	}
+}
+
 void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 {
 	int x = 0;
@@ -89,9 +121,20 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 			{
 				//统计x,y坐标周围有几个雷
 				int count = GetMineCount(mine, x, y);
-				show[x][y] = count+'0';
+				if(count  == 0)
+				{
+					show[x][y] = ' ';
+					Spread(mine, show, x, y);
+					DisplayBoard(show, ROW, COL);
+				}
+				else
+				{
+					show[x][y] = count+'0';
+				}
+				/*show[x][y] = count+'0';
 				DisplayBoard(show, ROW, COL);
-				win++;
+				win++;*/
+				
 			}
 		}
 		else
