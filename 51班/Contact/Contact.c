@@ -11,16 +11,58 @@ void InitContact(Contact* pcon)
 	pcon->data = (PeoInfo*)malloc(pcon->capacity*sizeof(PeoInfo));
 
 	memset(pcon->data, 0, pcon->capacity*sizeof(PeoInfo));
+	//读取文件
+	LoaContact(pcon);
 }
 
 void DestroyContact(Contact* pcon)
 {
 	assert(pcon != NULL);
-
+	//保存数据到文件
+	SaveContact(pcon);
 	free(pcon->data);
 	pcon->data = NULL;
 	pcon->sz = 0;
 	pcon->capacity = 0;
+}
+
+void LoaContact(Contact* pcon)
+{
+	FILE* pf = fopen("contact.dat", "rb");
+	PeoInfo tmp = {0};
+	int i = 0;
+	if(pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return;
+	}
+	//读数据
+	while(fread(&tmp, sizeof(PeoInfo), 1, pf))
+	{
+		CheckCapacity(pcon);
+		pcon->data[pcon->sz++] = tmp;
+	}
+	fclose(pf);
+	pf = NULL;
+}
+
+void SaveContact(Contact* pcon)
+{
+	FILE* pf = fopen("contact.dat", "wb");
+	int i = 0;
+	if(pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return;
+	}
+	//写数据
+	for(i=0; i<pcon->sz; i++)
+	{
+		fwrite(pcon->data+i, sizeof(PeoInfo), 1, pf);
+	}
+
+	fclose(pf);
+	pf = NULL;
 }
 
 int CheckCapacity(Contact* pcon)
@@ -131,3 +173,4 @@ void DelContact(Contact* pcon)
 		}
 	}
 }
+

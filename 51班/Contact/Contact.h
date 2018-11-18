@@ -5,6 +5,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
+
 
 
 enum Option
@@ -53,5 +55,7 @@ void AddContact(Contact* pcon);
 void ShowContact(const Contact* pcon);
 void DelContact(Contact* pcon);
 int  CheckCapacity(Contact* pcon);
+void SaveContact(Contact* pcon);
+void LoaContact(Contact* pcon);
 
 #endif //__CONTACT_H__
