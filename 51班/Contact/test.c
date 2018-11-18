@@ -42,6 +42,7 @@ void test()
 		case EMPTY:
 			break;
 		case EXIT:
+			DestroyContact(&con);
 			printf("�˳�ͨѶ¼\n");
 			break;
 		default:
@@ -50,8 +51,10 @@ void test()
 		}
 	} while (input);
 }
+
 int main()
 {
 	test();
 	return 0;
 }
+
