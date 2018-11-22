@@ -72,40 +72,63 @@ void Spread(char mine[ROWS][COLS], char show[ROWS][COLS], int x, int y)
 	int offset_x = 0;
 	int offset_y = 0;
 	int count = 0;
-	//便利周围坐标
-	for(offset_x=-1; offset_x<=1; offset_x++)
+	//坐标合法
+	if(x>=1 && x<=9 && y>=1 && y<=9)
 	{
-		for(offset_y=-1; offset_y<=1; offset_y++)
+		//遍历周围坐标
+		for(offset_x=-1; offset_x<=1; offset_x++)
 		{
-			//如果这个坐标不是雷
-			if(mine[x+offset_x][y+offset_y] == '0')
+			for(offset_y=-1; offset_y<=1; offset_y++)
 			{
-				//统计周围雷的个数
-				count = GetMineCount(mine, x+offset_x, y+offset_y);
-				if(count == 0)
+				//如果这个坐标不是雷
+				if(mine[x+offset_x][y+offset_y] == '0')
 				{
-					if(show[x+offset_x][y+offset_y] == '*')
+					//统计周围雷的个数
+					count = GetMineCount(mine, x+offset_x, y+offset_y);
+					if(count == 0)
 					{
-						show[x+offset_x][y+offset_y] = ' ';
-						Spread(mine, show, x+offset_x, y+offset_y);
+						if(show[x+offset_x][y+offset_y] == '*')
+						{
+							show[x+offset_x][y+offset_y] = ' ';
+							Spread(mine, show, x+offset_x, y+offset_y);
+						}
 					}
-				}
-				else
-				{
-					show[x+offset_x][y+offset_y] = count+'0';
+					else
+					{
+						show[x+offset_x][y+offset_y] = count+'0';
+					}
 				}
 			}
 		}
 	}
 }
 
+//判断是否排雷成功
+int IsWin(char show[ROWS][COLS], int row, int col)
+{
+	int i = 0;
+	int j = 0;
+	int count = 0;
+	for(i=1; i<=row; i++)
+	{
+		for(j=1; j<=col; j++)
+		{
+			if(show[i][j] == '*')
+			{
+				count++;
+			}
+		}
+	}
+	return count == EASY_COUNT;
+}
+
 void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 {
 	int x = 0;
 	int y = 0;
-	int win = 0;
+	static int win = 0;
 
-	while(win<row*col-EASY_COUNT)
+	while(IsWin(show, row, col) == 0)
 	{
 		printf("请输入排查的坐标:>");
 		scanf("%d%d", &x, &y);
@@ -130,11 +153,8 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 				else
 				{
 					show[x][y] = count+'0';
+					DisplayBoard(show, ROW, COL);
 				}
-				/*show[x][y] = count+'0';
-				DisplayBoard(show, ROW, COL);
-				win++;*/
-				
 			}
 		}
 		else
@@ -142,7 +162,7 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 			printf("坐标非法，请重新输入！\n");
 		}
 	}
-	if(win == row*col-EASY_COUNT)
+	if(IsWin(show, row,col))
 	{
 		printf("恭喜你， 排雷成功\n");
 		DisplayBoard(mine, ROW, COL);
