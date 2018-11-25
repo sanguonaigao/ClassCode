@@ -1,0 +1,10 @@
+FILE:c:\classcode\51°à\test_11_25\test.c LINE:14 DATE:Nov 25 2018 TIME:09:21:25 i = 0
+FILE:c:\classcode\51°à\test_11_25\test.c LINE:14 DATE:Nov 25 2018 TIME:09:21:25 i = 1
+FILE:c:\classcode\51°à\test_11_25\test.c LINE:14 DATE:Nov 25 2018 TIME:09:21:25 i = 2
+FILE:c:\classcode\51°à\test_11_25\test.c LINE:14 DATE:Nov 25 2018 TIME:09:21:25 i = 3
+FILE:c:\classcode\51°à\test_11_25\test.c LINE:14 DATE:Nov 25 2018 TIME:09:21:25 i = 4
+FILE:c:\classcode\51°à\test_11_25\test.c LINE:14 DATE:Nov 25 2018 TIME:09:21:25 i = 5
+FILE:c:\classcode\51°à\test_11_25\test.c LINE:14 DATE:Nov 25 2018 TIME:09:21:25 i = 6
+FILE:c:\classcode\51°à\test_11_25\test.c LINE:14 DATE:Nov 25 2018 TIME:09:21:25 i = 7
+FILE:c:\classcode\51°à\test_11_25\test.c LINE:14 DATE:Nov 25 2018 TIME:09:21:25 i = 8
+FILE:c:\classcode\51°à\test_11_25\test.c LINE:14 DATE:Nov 25 2018 TIME:09:21:25 i = 9
