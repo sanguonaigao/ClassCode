@@ -98,23 +98,25 @@
 //	return 0;
 //}
 
+//
+//int main()
+//{
+//	short s = 1;
+//	int a = 10;
+//
+//	printf("%d\n", sizeof(s=a+3));//2
+//	printf("%d\n", s);//1
+//	printf("%d\n", a);//10
+//
+//	//int a = 10;
+//	//int arr[10] = {0};
+//
+//	//printf("%d\n", sizeof(arr));//40
+//
+//	//printf("%d\n", sizeof(a));//4
+//	//printf("%d\n", sizeof(int));//4
+//
+//	return 0;
+//}
 
-int main()
-{
-	short s = 1;
-	int a = 10;
 
-	printf("%d\n", sizeof(s=a+3));//2
-	printf("%d\n", s);//1
-	printf("%d\n", a);//10
-
-	//int a = 10;
-	//int arr[10] = {0};
-
-	//printf("%d\n", sizeof(arr));//40
-
-	//printf("%d\n", sizeof(a));//4
-	//printf("%d\n", sizeof(int));//4
-
-	return 0;
-}
