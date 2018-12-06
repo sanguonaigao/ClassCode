@@ -121,25 +121,27 @@
 
 //char *strcpy( char *strDestination, const char *strSource );
 //为什么要const修饰src？--思考--const的作用是什么？
-char* my_strcpy(char*dest, const char* src)
-{
-	char* ret = dest;
-	assert(src != NULL);//断言
-	assert(dest != NULL);//断言
+//char* my_strcpy(char*dest, const char* src)
+//{
+//	char* ret = dest;
+//	assert(src != NULL);//断言
+//	assert(dest != NULL);//断言
+//
+//	while(*dest++ = *src++)
+//	{
+//		;
+//	}
+//	return ret;
+//}
+//
+//int main()
+//{
+//	char arr[20] = "***********";
+//	char*p = "abcdef";
+//	char *q = my_strcpy(arr, p);
+//	printf("%s\n", q);
+//	system("pause");
+//	return 0;
+//}
 
-	while(*dest++ = *src++)
-	{
-		;
-	}
-	return ret;
-}
 
-int main()
-{
-	char arr[20] = "***********";
-	char*p = "abcdef";
-	char *q = my_strcpy(arr, p);
-	printf("%s\n", q);
-	system("pause");
-	return 0;
-}

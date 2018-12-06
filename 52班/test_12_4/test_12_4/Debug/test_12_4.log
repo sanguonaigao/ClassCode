@@ -1,7 +1,7 @@
-﻿生成启动时间为 2018/12/4 21:33:51。
+﻿生成启动时间为 2018/12/6 17:25:36。
 项目“C:\ClassCode\52班\test_12_4\test_12_4\test_12_4.vcxproj”在节点 2 上(build 个目标)。
 InitializeBuildStatus:
-  正在对“Debug\test_12_4.unsuccessfulbuild”执行 Touch 任务。
+  正在创建“Debug\test_12_4.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
 ClCompile:
   c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt test.c
   test.c
@@ -18,4 +18,4 @@ FinalizeBuildStatus:
 
 生成成功。
 
-已用时间 00:00:00.24
+已用时间 00:00:00.18
