@@ -5,18 +5,55 @@ void InitContact(Contact* pcon)
 {
 	assert(pcon != NULL);
 	pcon->sz = 0;
-	memset(pcon->data, 0, sizeof(pcon->data));
+	pcon->capacity = DEFAULT_SZ;
+	pcon->data = (PeoInfo*)malloc(DEFAULT_SZ*sizeof(PeoInfo));
+	if(pcon->data == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return;
+	}
+	memset(pcon->data, 0, DEFAULT_SZ*sizeof(PeoInfo));
+}
+
+void DestroyContact(Contact* pcon)
+{
+	assert(pcon != NULL);
+	free(pcon->data);
+	pcon->data = NULL;
+	pcon->sz = 0;
+	pcon->capacity = 0;
+}
+
+int CheckCapacity(Contact* pcon)
+{
+	assert(pcon != NULL);
+	if(pcon->sz == pcon->capacity)
+	{
+		PeoInfo* tmp = (PeoInfo*)realloc(pcon->data, (pcon->capacity+2)*sizeof(PeoInfo)); 
+		if(tmp != NULL)
+		{
+			pcon->data = tmp;
+			pcon->capacity += 2;
+			printf("增容成功\n");
+			return 1;
+		}
+		else
+		{
+			printf("%s\n", strerror(errno));
+			return 0;
+		}
+	}
+	else
+	{
+		return 1;
+	}
 }
 
 void AddContact(Contact* pcon)
 {
 	assert(pcon != NULL);
 
-	if(pcon->sz == MAX)
-	{
-		printf("通讯录已满，无法添加\n");
-	}
-	else
+	if(1 == CheckCapacity(pcon))
 	{
 		printf("请输入名字:>");
 		scanf("%s", pcon->data[pcon->sz].name);
@@ -173,4 +210,9 @@ void SortContact(Contact* pcon)
 			break;
 	}
 }
+
+
+
+
+
 
