@@ -4,6 +4,7 @@
 void InitContact(Contact* pcon)
 {
 	assert(pcon != NULL);
+	//保证通讯录有一定的空间
 	pcon->sz = 0;
 	pcon->capacity = DEFAULT_SZ;
 	pcon->data = (PeoInfo*)malloc(DEFAULT_SZ*sizeof(PeoInfo));
@@ -13,6 +14,8 @@ void InitContact(Contact* pcon)
 		return;
 	}
 	memset(pcon->data, 0, DEFAULT_SZ*sizeof(PeoInfo));
+	//加载文件的信息到通讯录
+	LoadContact(pcon);
 }
 
 void DestroyContact(Contact* pcon)
@@ -211,8 +214,50 @@ void SortContact(Contact* pcon)
 	}
 }
 
+void SaveContact(Contact* pcon)
+{
+	FILE* pfOut = fopen("contact.dat", "wb");
+	int i = 0;
+	if(pfOut == NULL)
+	{
+		perror("open file for write");
+		system("pause");
+		return;
+	}
+	//保存数据
+	for(i=0; i<pcon->sz; i++)
+	{
+		fwrite(pcon->data+i, sizeof(PeoInfo), 1, pfOut);
+	}
 
+	//关闭文件
+	fclose(pfOut);
+	pfOut = NULL;
+	printf("保存成功\n");
+}
 
+void LoadContact(Contact* pcon)
+{
+	FILE* pfIn = fopen("contact.dat", "rb");
+	int i = 0;
+	PeoInfo tmp = {0};
+	if(pfIn == NULL)
+	{
+		perror("open file for read");
+		system("pause");
+		return;
+	}
+	//加载数据
+	while(fread(&tmp, sizeof(PeoInfo), 1, pfIn))
+	{
+		CheckCapacity(pcon);
+		pcon->data[pcon->sz] = tmp;
+		pcon->sz++;
+	}
+	//关闭文件
+	fclose(pfIn);
+	pfIn = NULL;
+}
 
 
 

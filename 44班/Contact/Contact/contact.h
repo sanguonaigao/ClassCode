@@ -70,4 +70,9 @@ void SearchContact(const Contact* pcon);
 void ModifyContact(Contact* pcon);
 void SortContact(Contact* pcon);
 
+//保存信息到文件
+void SaveContact(Contact* pcon);
+//加载文件的信息
+void LoadContact(Contact* pcon);
+
 

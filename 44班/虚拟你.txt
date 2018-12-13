@@ -1,0 +1,4 @@
+1. vmware workstation
+2. 虚拟一台Linux虚拟机-centos 7.0
+3. centos 7.0镜像 xxx.iso
+4. GNOME桌面版 开发工具
