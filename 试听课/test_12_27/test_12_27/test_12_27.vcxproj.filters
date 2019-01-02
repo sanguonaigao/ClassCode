@@ -15,16 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Snake.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="test.c">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Snake.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

@@ -11,11 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Snake.c" />
     <ClCompile Include="test.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Snake.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9891306E-6683-4F85-9E8B-6294D8F020F5}</ProjectGuid>
