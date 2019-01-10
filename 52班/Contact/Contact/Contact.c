@@ -2,21 +2,63 @@
 
 #include "Contact.h"
 
-
 void InitContact(Contact* pc)
 {
 	assert(pc);
 	pc->sz = 0;
-	memset(pc->data, 0, sizeof(pc->data));
+	//memset(pc->data, 0, sizeof(pc->data));
+	pc->data = (PeoInfo*)malloc(3*sizeof(PeoInfo));
+	if(pc->data == NULL)
+	{
+		perror("InitContact::malloc()");
+		exit(EXIT_FAILURE);
+	}
+	pc->capacity = 3;
+}
+
+void DestroyContact(Contact* pc)
+{
+	assert(pc);
+	pc->sz = 0;
+	pc->capacity = 0;
+	free(pc->data);
+	pc->data = NULL;
+}
+
+int CheckCapacity(Contact* pc)
+{
+	assert(pc);
+	if(pc->capacity == pc->sz)
+	{
+		//扩容
+		PeoInfo* ptr = (PeoInfo*)realloc(pc->data, (pc->capacity+2)*sizeof(PeoInfo));
+		if(ptr != NULL)
+		{
+			pc->data = ptr;
+			pc->capacity += 2;
+			printf("增容成功\n");
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	return 1;
 }
 
 void AddContact(Contact* pc)
 {
 	assert(pc);
 
-	if(pc->sz == MAX)
+	/*if(pc->sz == MAX)
 	{
-		printf("很遗憾，通讯录已满，无法添加\n");
+	printf("很遗憾，通讯录已满，无法添加\n");
+	return;
+	}*/
+	if(CheckCapacity(pc) == 0)
+	{
+		printf("增容失败，无法添加\n");
 		return;
 	}
 	//添加
