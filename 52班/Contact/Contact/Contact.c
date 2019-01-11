@@ -14,6 +14,8 @@ void InitContact(Contact* pc)
 		exit(EXIT_FAILURE);
 	}
 	pc->capacity = 3;
+	//加载文件中的保存信息
+	LoadContact(pc);
 }
 
 void DestroyContact(Contact* pc)
@@ -136,3 +138,44 @@ void DelContact(Contact* pc)
 	pc->sz--;
 	printf("删除成功\n");
 }
+
+void SaveContact(Contact* pc)
+{
+	FILE* pf = fopen("contact.dat", "wb");
+	int i = 0;
+	if(pf == NULL)
+	{
+		perror("SaveContact::fopen");
+		return;
+	}
+	//写数据
+	for(i=0; i<pc->sz; i++)
+	{
+		fwrite(&(pc->data[i]), sizeof(PeoInfo), 1, pf);
+	}
+
+	fclose(pf);
+	pf = NULL;
+}
+
+void LoadContact(Contact* pc)
+{
+	FILE* pf = fopen("contact.dat", "rb");
+	PeoInfo tmp = {0};
+	if(pf == NULL)
+	{
+		perror("LoadContact::fopen");
+		return;
+	}
+	//读文件
+	while(fread(&tmp, sizeof(PeoInfo), 1, pf))
+	{
+		//将读取到的元素放在通讯录中
+		CheckCapacity(pc);
+		pc->data[pc->sz] = tmp;
+		pc->sz++;
+	}
+	fclose(pf);
+	pf = NULL;
+}
+

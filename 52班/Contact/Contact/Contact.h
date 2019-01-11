@@ -43,5 +43,7 @@ void AddContact(Contact* pc);
 void ShowContact(Contact* pc);
 void DelContact(Contact* pc);
 int CheckCapacity(Contact* pc);
+void SaveContact(Contact* pc);
+void LoadContact(Contact* pc);
 
 #endif //__CONTACT_H__

@@ -55,6 +55,7 @@ void test()
 		case EMPTY:
 			break;
 		case EXIT:
+			SaveContact(&con);
 			DestroyContact(&con);
 			printf("�˳�ͨѶ¼\n");
 			break;

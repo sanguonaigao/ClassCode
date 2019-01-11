@@ -18,18 +18,10 @@
     <ClCompile Include="test.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Contact.c">
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.txt">
       <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Contact.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="contact.dat">
-      <Filter>头文件</Filter>
     </None>
   </ItemGroup>
 </Project>
