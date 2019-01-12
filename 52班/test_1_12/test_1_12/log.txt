@@ -1,0 +1,10 @@
+file:c:\classcode\52°à\test_1_12\test_1_12\test.c line=13 date=Jan 12 2019 time=11:57:31 i=0
+file:c:\classcode\52°à\test_1_12\test_1_12\test.c line=13 date=Jan 12 2019 time=11:57:31 i=1
+file:c:\classcode\52°à\test_1_12\test_1_12\test.c line=13 date=Jan 12 2019 time=11:57:31 i=2
+file:c:\classcode\52°à\test_1_12\test_1_12\test.c line=13 date=Jan 12 2019 time=11:57:31 i=3
+file:c:\classcode\52°à\test_1_12\test_1_12\test.c line=13 date=Jan 12 2019 time=11:57:31 i=4
+file:c:\classcode\52°à\test_1_12\test_1_12\test.c line=13 date=Jan 12 2019 time=11:57:31 i=5
+file:c:\classcode\52°à\test_1_12\test_1_12\test.c line=13 date=Jan 12 2019 time=11:57:31 i=6
+file:c:\classcode\52°à\test_1_12\test_1_12\test.c line=13 date=Jan 12 2019 time=11:57:31 i=7
+file:c:\classcode\52°à\test_1_12\test_1_12\test.c line=13 date=Jan 12 2019 time=11:57:31 i=8
+file:c:\classcode\52°à\test_1_12\test_1_12\test.c line=13 date=Jan 12 2019 time=11:57:31 i=9
