@@ -12,19 +12,19 @@ void menu()
 void game()
 {
 	//扫雷游戏
-	char mine[ROWS][COLS];//存放雷的信息
+	char mine[ROWS][COLS];//存放布置好的雷的信息
 	char show[ROWS][COLS];//存放排查出雷的信息
 	//初始化棋盘
 	InitBoard(mine, ROWS, COLS, '0');
 	InitBoard(show, ROWS, COLS, '*');
 	//打印棋盘
-	DisplayBoard(mine, ROW, COL);
-	DisplayBoard(show, ROW, COL);
+	//DisplayBoard(mine, ROW, COL);
+	//DisplayBoard(show, ROW, COL);
 	//布置雷
 	SetMine(mine, ROW, COL);
-	DisplayBoard(mine, ROW, COL);
+	DisplayBoard(show, ROW, COL);
 	//扫雷
-
+	FindMine(mine, show, ROW, COL);
 }
 
 void test()
