@@ -2,6 +2,7 @@
 
 #include "game.h"
 
+//≥ı ºªØ∆Â≈Ã
 void InitBoard(char board[ROWS][COLS], int rows, int cols, char set)
 {
 	int i = 0;
