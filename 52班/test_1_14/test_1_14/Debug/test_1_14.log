@@ -1,0 +1,13 @@
+﻿生成启动时间为 2019/1/14 11:00:58。
+项目“C:\ClassCode\52班\test_1_14\test_1_14\test_1_14.vcxproj”在节点 2 上(build 个目标)。
+InitializeBuildStatus:
+  正在创建“Debug\test_1_14.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt test.c
+  test.c
+c:\classcode\52班\test_1_14\test_1_14\test.c(5): fatal error C1189: #error :  "呵呵"
+已完成生成项目“C:\ClassCode\52班\test_1_14\test_1_14\test_1_14.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.93
