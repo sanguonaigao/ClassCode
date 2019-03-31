@@ -1,22 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
-#include <time.h>
 #include <stdlib.h>
-
-//公共的符号定义
+#include <time.h>
 
 #define ROW 3
 #define COL 3
 
-//函数的声明
 void InitBoard(char board[ROW][COL], int row, int col);
-void DisplatBoard(char board[ROW][COL], int row, int col);
+void DisplayBoard(char board[ROW][COL], int row, int col);
 void PlayerMove(char board[ROW][COL], int row, int col);
 void ComputerMove(char board[ROW][COL], int row, int col);
 
-//'*'-玩家赢
-//'#'-电脑赢
-//'Q'-平局
-//'C'-继续
-
-char IsWin(char board[ROW][COL], int row, int col);
+//玩家赢-'*'
+//电脑赢-'#'
+//平局-'Q'
+//继续-'C'
+char CheckWin(char board[ROW][COL], int row, int col);
