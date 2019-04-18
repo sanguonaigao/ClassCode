@@ -13,6 +13,7 @@ void menu()
 
 void game()
 {
+	char ret = 0;
 	char board[ROW][COL] = {0};
 	//初始化棋盘
 	InitBoard(board, ROW, COL);
@@ -24,9 +25,30 @@ void game()
 		//玩家走
 		PlayerMove(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
+		//判断输赢
+		ret = CheckWin(board, ROW, COL);
+		if(ret != 'C')
+			break;
 		//电脑走
 		ComputerMove(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
+		//判断输赢
+		ret = CheckWin(board, ROW, COL);
+		if(ret != 'C')
+			break;
+	}
+	//
+	if(ret == '*')
+	{
+		printf("玩家赢\n");
+	}
+	else if(ret == '#')
+	{
+		printf("电脑赢\n");
+	}
+	else if(ret == 'Q')
+	{
+		printf("平局\n");
 	}
 }
 
@@ -57,6 +79,7 @@ void test()
 
 int main()
 {
+	//测试三子棋游戏
 	test();
 	system("pause");
 	return 0;
