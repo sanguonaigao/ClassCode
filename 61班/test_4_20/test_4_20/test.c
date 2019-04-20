@@ -6,7 +6,14 @@
 #include <string.h>
 
 
+int main()
+{
+	int sum = 0;
+	//100 
+	//1-99
 
+	return 0;
+}
 
 //typedef struct Node
 //{
