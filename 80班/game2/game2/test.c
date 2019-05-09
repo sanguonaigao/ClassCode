@@ -23,12 +23,23 @@ void game()
 	DisplayBoard(show, ROW, COL);
 	//1. ²¼ÖÃÀ×
 	SetMine(mine, ROW, COL);
+<<<<<<< HEAD
 	//2. ÅÅ²éÀ×
+=======
+	DisplayBoard(mine, ROW, COL);
+
+	//2. ÅÅ²éÀ×
+	FindMine(mine, show, ROW, COL);
+>>>>>>> 91c89a768dd2b4f013122350fc15b002c60c46dc
 }
 void test()
 {
 	int input = 0;
+<<<<<<< HEAD
 
+=======
+	srand((unsigned int)time(NULL));
+>>>>>>> 91c89a768dd2b4f013122350fc15b002c60c46dc
 	do 
 	{
 		menu();
@@ -53,4 +64,8 @@ int main()
 {
 	test();
 	return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 91c89a768dd2b4f013122350fc15b002c60c46dc
