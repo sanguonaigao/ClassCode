@@ -272,50 +272,98 @@ int count = 0;
 //	system("pause");
 //	return 0;
 //}
+//
+//void bubble_sort(int arr[], int sz)
+//{
+//	int i = 0;
+//	//趟数
+//	for(i=0; i<sz-1; i++)
+//	{
+//		int j = 0;
+//		int flag = 1;//有序
+//
+//		for(j=0; j<sz-1-i; j++)
+//		{
+//			if(arr[j] > arr[j+1])
+//			{
+//				flag = 0;
+//				int tmp = arr[j];
+//				arr[j] = arr[j+1];
+//				arr[j+1] = tmp;
+//			}
+//		}
+//		if(flag == 1)
+//			bre
+//	}
+//}
+//
+//void print_arr(int arr[], int sz)
+//{
+//	int i = 0;
+//	for(i=0; i<sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//
+//int main()
+//{
+//	int arr[] = {9,0,1,2,3,4,5,6,7,8};
+//
+//	int sz = sizeof(arr)/sizeof(arr[0]);
+//
+//	print_arr(arr, sz);
+//	bubble_sort(arr, sz);
+//	print_arr(arr, sz);
+//	system("pause");
+//	return 0;
+//}
 
-void bubble_sort(int arr[], int sz)
-{
-	int i = 0;
-	//趟数
-	for(i=0; i<sz-1; i++)
-	{
-		int j = 0;
-		int flag = 1;//有序
-
-		for(j=0; j<sz-1-i; j++)
-		{
-			if(arr[j] > arr[j+1])
-			{
-				flag = 0;
-				int tmp = arr[j];
-				arr[j] = arr[j+1];
-				arr[j+1] = tmp;
-			}
-		}
-		if(flag == 1)
-			bre
-	}
-}
-
-void print_arr(int arr[], int sz)
-{
-	int i = 0;
-	for(i=0; i<sz; i++)
-	{
-		printf("%d ", arr[i]);
-	}
-	printf("\n");
-}
-
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
 int main()
 {
-	int arr[] = {9,0,1,2,3,4,5,6,7,8};
+	int a[100][8] = { 0 };
+	int i = 0;
+	int j = 0;
+	int n = 0;
+	int w = 0;
+	int s = 0;
+	int max = 0;
+	int maxx = 0;
+	srand((unsigned int)time(NULL));
+	for (j = 0; j < 100; j++)
+	{
+		n = rand() % 7 + 1;
+		a[j][7] = n;
+		for (i = 0; i < n; i++)
+		{
+			a[j][i] = rand() % (59) + 91;
+			printf("a[%d][%d]=%d ", j, i, a[j][i]);
+			s = s + a[j][i];
+		}
+		printf("n=%d ", a[j][7]);
+		printf("\n");
+		w = 25 * (s)-200 * n;
+		s = 0;
 
-	int sz = sizeof(arr)/sizeof(arr[0]);
+		if (w>max)
+		{
+			max = w;
+			maxx = j;
+		}
 
-	print_arr(arr, sz);
-	bubble_sort(arr, sz);
-	print_arr(arr, sz);
+	}
+	printf("最大值是%d ", max);
+	printf("此时n=%d ", a[maxx][7]);
+	for (i = 0; i < a[maxx][7]; i++)
+	{
+		printf("a[%d][%d]=%d ", maxx, i, a[maxx][i]);
+	}
 	system("pause");
 	return 0;
 }

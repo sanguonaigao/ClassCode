@@ -1,4 +1,4 @@
-﻿生成启动时间为 2019/5/13 21:46:50。
+﻿生成启动时间为 2019/5/13 23:12:33。
 项目“C:\ClassCode\61班\test_5_13\test_5_13\test_5_13.vcxproj”在节点 2 上(build 个目标)。
 InitializeBuildStatus:
   正在创建“Debug\test_5_13.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
@@ -18,4 +18,4 @@ FinalizeBuildStatus:
 
 生成成功。
 
-已用时间 00:00:00.25
+已用时间 00:00:00.22
