@@ -21,6 +21,8 @@
 
 #define MAX 1000
 
+#define DEFAULT_SZ 3
+
 enum Option
 {
 	EXIT,
@@ -41,21 +43,29 @@ typedef struct PeoInfo
 	char addr[ADDR_MAX];
 }PeoInfo;
 
+//typedef struct Contact
+//{
+//	int sz;//有效信息的个数
+//	struct PeoInfo data[MAX];//存放人的信息
+//}Contact, *pContact;
+
 typedef struct Contact
 {
-	struct PeoInfo data[MAX];//存放人的信息
 	int sz;//有效信息的个数
+	int capacity;//当前通讯录的总容量
+	struct PeoInfo data[0];//存放人的信息
 }Contact, *pContact;
 
 //pContact=== Contact* == struct Contact*
 
-void AddContact(struct Contact* pcon);
-void ShowContact(struct Contact* pcon);
 void InitContact(pContact pcon);
+pContact AddContact(struct Contact* pcon);
+void ShowContact(struct Contact* pcon);
 void DelContact(pContact pcon);
 void SeachContact(pContact pcon);
 void ModifyContact(pContact pcon);
 void SortContact(pContact pcon);
+void DestroyContact(pContact pcon);
 
 //静态的通讯录
 //1000

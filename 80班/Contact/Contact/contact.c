@@ -5,31 +5,51 @@
 void InitContact(pContact pcon)
 {
 	pcon->sz = 0;
-	memset(pcon->data, 0, MAX*sizeof(PeoInfo));
+	pcon->capacity = DEFAULT_SZ;
+	memset(pcon->data, 0, pcon->capacity*sizeof(PeoInfo));
 }
 
-void AddContact(struct Contact* pcon)
+void DestroyContact(pContact pcon)
 {
-	if(pcon->sz < MAX)
+	free(pcon);
+	pcon = NULL;
+	printf("销毁通讯录\n");
+}
+
+pContact CheckCapacity(pContact pcon)
+{
+	if(pcon->sz == pcon->capacity)
 	{
-		//录信息
-		printf("请输入名字:>");
-		scanf("%s", pcon->data[pcon->sz].name);
-		printf("请输入年龄:>");
-		scanf("%d", &(pcon->data[pcon->sz].age));
-		printf("请输入性别:>");
-		scanf("%s", pcon->data[pcon->sz].sex);
-		printf("请输入电话:>");
-		scanf("%s", pcon->data[pcon->sz].tele);
-		printf("请输入地址:>");
-		scanf("%s", pcon->data[pcon->sz].addr);
-		pcon->sz++;
-		printf("添加成功\n");
+		//增容
+		pContact ptr = (pContact)realloc(pcon, sizeof(Contact)+(pcon->capacity+2)*sizeof(PeoInfo));
+		if(ptr != NULL)
+			pcon = ptr;
+
+		pcon->capacity += 2;
+		printf("增容成功\n");
 	}
-	else
-	{
-		printf("通讯录已满，无法添加\n");
-	}
+	return pcon;
+}
+
+pContact AddContact(struct Contact* pcon)
+{
+	//增容
+	pcon = CheckCapacity(pcon);
+	//录信息
+	printf("请输入名字:>");
+	scanf("%s", pcon->data[pcon->sz].name);
+	printf("请输入年龄:>");
+	scanf("%d", &(pcon->data[pcon->sz].age));
+	printf("请输入性别:>");
+	scanf("%s", pcon->data[pcon->sz].sex);
+	printf("请输入电话:>");
+	scanf("%s", pcon->data[pcon->sz].tele);
+	printf("请输入地址:>");
+	scanf("%s", pcon->data[pcon->sz].addr);
+
+	pcon->sz++;
+	printf("添加成功\n");
+	return pcon;
 }
 
 void ShowContact(struct Contact* pcon)
