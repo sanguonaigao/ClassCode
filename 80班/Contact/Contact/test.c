@@ -30,7 +30,7 @@ void test()
 	}
 	
 	//初始化通讯录
-	InitContact(pcon);
+	pcon = InitContact(pcon);
 
 	do 
 	{

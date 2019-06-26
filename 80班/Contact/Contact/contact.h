@@ -58,7 +58,7 @@ typedef struct Contact
 
 //pContact=== Contact* == struct Contact*
 
-void InitContact(pContact pcon);
+pContact InitContact(pContact pcon);
 pContact AddContact(struct Contact* pcon);
 void ShowContact(struct Contact* pcon);
 void DelContact(pContact pcon);
@@ -66,6 +66,8 @@ void SeachContact(pContact pcon);
 void ModifyContact(pContact pcon);
 void SortContact(pContact pcon);
 void DestroyContact(pContact pcon);
+void SaveContact(pContact pcon);
+pContact LoadContact(pContact pcon);
 
 //¾²Ì¬µÄÍ¨Ñ¶Â¼
 //1000

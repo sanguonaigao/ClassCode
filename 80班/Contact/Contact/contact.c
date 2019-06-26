@@ -2,19 +2,6 @@
 
 #include "contact.h"
 
-void InitContact(pContact pcon)
-{
-	pcon->sz = 0;
-	pcon->capacity = DEFAULT_SZ;
-	memset(pcon->data, 0, pcon->capacity*sizeof(PeoInfo));
-}
-
-void DestroyContact(pContact pcon)
-{
-	free(pcon);
-	pcon = NULL;
-	printf("销毁通讯录\n");
-}
 
 pContact CheckCapacity(pContact pcon)
 {
@@ -29,6 +16,69 @@ pContact CheckCapacity(pContact pcon)
 		printf("增容成功\n");
 	}
 	return pcon;
+}
+
+
+pContact LoadContact(pContact pcon)
+{
+	//打开文件
+	FILE* pfRead = fopen("contact.dat", "rb");
+	PeoInfo tmp = {0};
+	if(pfRead == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return NULL;
+	}
+	//读文件
+	while(fread(&tmp, sizeof(PeoInfo), 1, pfRead))
+	{
+		//增容
+		pcon = CheckCapacity(pcon);
+		pcon->data[pcon->sz] = tmp;
+		pcon->sz++;
+	}
+	//关闭文件
+	fclose(pfRead);
+	pfRead = NULL;
+	return pcon;
+}
+
+pContact InitContact(pContact pcon)
+{
+	pcon->sz = 0;
+	pcon->capacity = DEFAULT_SZ;
+	memset(pcon->data, 0, pcon->capacity*sizeof(PeoInfo));
+	//加载文件的中的通讯录信息
+	pcon = LoadContact(pcon);
+	return pcon;
+}
+
+void SaveContact(pContact pcon)
+{
+	FILE* pfWrite = fopen("contact.dat", "wb");
+	int i = 0;
+	if(pfWrite == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return;
+	}
+	//写数据
+	for(i=0; i<pcon->sz; i++)
+	{
+		fwrite(pcon->data+i, sizeof(PeoInfo), 1, pfWrite);
+	}
+	//关闭文件
+	fclose(pfWrite);
+	pfWrite = NULL;
+}
+
+void DestroyContact(pContact pcon)
+{
+	//保存文件
+	SaveContact(pcon);
+	free(pcon);
+	pcon = NULL;
+	printf("销毁通讯录\n");
 }
 
 pContact AddContact(struct Contact* pcon)
