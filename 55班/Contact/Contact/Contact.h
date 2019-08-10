@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
-
+#include <stdlib.h>
 
 enum Option
 {
@@ -22,6 +22,7 @@ enum Option
 #define ADDR_MAX 30
 #define TELE_MAX 12
 
+#define DEFAULT_SZ 3
 #define MAX 1000
 
 //人的信息
@@ -35,13 +36,25 @@ typedef struct PeoInfo
 }PeoInfo;
 
 //通讯录的结构体
+//静态版本
+//typedef struct Contact
+//{
+//	PeoInfo data[MAX];
+//	int sz;//有效信息的个数
+//}Contact;
+
+//动态增长版本
 typedef struct Contact
 {
-	PeoInfo data[MAX];
+	PeoInfo *data;
 	int sz;//有效信息的个数
+	int capacity;//当前最大的容量
 }Contact;
 
 void InitContact(Contact* pcon);
 void AddContact(Contact* pcon);
 void ShowContact(const Contact* pcon);
 void DelContact(Contact* pcon);
+void DestoryContact(Contact* pcon);
+void SaveContact(Contact* pcon);
+void LoadContact(Contact* pcon);
