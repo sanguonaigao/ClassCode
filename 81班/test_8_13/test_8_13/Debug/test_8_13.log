@@ -1,0 +1,14 @@
+﻿生成启动时间为 2019/8/13 12:26:00。
+项目“C:\ClassCode\81班\test_8_13\test_8_13\test_8_13.vcxproj”在节点 2 上(build 个目标)。
+InitializeBuildStatus:
+  正在创建“Debug\test_8_13.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt test.c
+  test.c
+c:\classcode\81班\test_8_13\test_8_13\test.c(330): warning C4102: “flag”: 未引用的标签
+c:\classcode\81班\test_8_13\test_8_13\test.c(338): error C2094: 标签“flag”未定义
+已完成生成项目“C:\ClassCode\81班\test_8_13\test_8_13\test_8_13.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.65
