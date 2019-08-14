@@ -1,0 +1,20 @@
+﻿生成启动时间为 2019/8/14 12:23:54。
+项目“C:\ClassCode\81班\add\add\add.vcxproj”在节点 2 上(build 个目标)。
+PrepareForBuild:
+  正在创建目录“C:\ClassCode\81班\add\Debug\”。
+InitializeBuildStatus:
+  正在创建“Debug\add.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt add.c
+  add.c
+Lib:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\ClassCode\81班\add\Debug\add.lib" /NOLOGO Debug\add.obj
+  add.vcxproj -> C:\ClassCode\81班\add\Debug\add.lib
+FinalizeBuildStatus:
+  正在删除文件“Debug\add.unsuccessfulbuild”。
+  正在对“Debug\add.lastbuildstate”执行 Touch 任务。
+已完成生成项目“C:\ClassCode\81班\add\add\add.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.29
