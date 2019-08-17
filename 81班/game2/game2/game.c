@@ -40,7 +40,7 @@ void DispalyBoard(char board[ROWS][COLS], int row, int col)
 
 void SetMine(char mine[ROWS][COLS], int row, int col)
 {
-	int count = 10;
+	int count = DEFAULT_COUNT;
 	while(count)
 	{
 		int x = rand()%row+1;
@@ -69,8 +69,8 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 {
 	int x = 0;
 	int y = 0;
-
-	while(1)
+	int win = 0;
+	while(win<row*col-DEFAULT_COUNT)
 	{
 		printf("请输入要排查的坐标:>");
 		scanf("%d%d", &x, &y);
@@ -87,6 +87,7 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 				int count = GetMineCount(mine, x, y);
 				show[x][y] = count + '0';
 				DispalyBoard(show, row, col);
+				win++;
 			}
 		}
 		else
@@ -94,4 +95,12 @@ void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 			printf("坐标非法，重新输入!\n");
 		}
 	}
+
+	if(win == row*col-DEFAULT_COUNT)
+	{
+		printf("恭喜你，排雷成功\n");
+		DispalyBoard(mine, row, col);
+	}
 }
+
+

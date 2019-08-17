@@ -13,13 +13,14 @@ void game()
 {
 	//存放雷的信息
 	char mine[ROWS][COLS] = {0};
+	//排查出的雷的信息
 	char show[ROWS][COLS] = {0};
 	InitBoard(mine, ROWS, COLS, '0');//'0'
 	InitBoard(show, ROWS, COLS, '*');//'*'
 	DispalyBoard(show, ROW, COL);
 	//布置雷
 	SetMine(mine, ROW, COL);
-	//DispalyBoard(mine, ROW, COL);
+	DispalyBoard(mine, ROW, COL);
 	//排雷
 	FindMine(mine, show, ROW, COL);
 }
@@ -51,6 +52,8 @@ void Test()
 
 int main()
 {
+	//测试扫雷游戏
 	Test();
 	return 0;
 }
+
