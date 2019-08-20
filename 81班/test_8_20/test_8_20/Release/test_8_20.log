@@ -1,0 +1,23 @@
+﻿生成启动时间为 2019/8/20 12:26:09。
+项目“C:\ClassCode\81班\test_8_20\test_8_20\test_8_20.vcxproj”在节点 2 上(build 个目标)。
+InitializeBuildStatus:
+  正在创建“Release\test_8_20.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt test.c
+  test.c
+test.c(156): warning C4013: “system”未定义；假设外部返回 int
+Link:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\ClassCode\81班\test_8_20\Release\test_8_20.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\test_8_20.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\ClassCode\81班\test_8_20\Release\test_8_20.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\ClassCode\81班\test_8_20\Release\test_8_20.lib" /MACHINE:X86 Release\test.obj
+  正在生成代码
+  已完成代码的生成
+  test_8_20.vcxproj -> C:\ClassCode\81班\test_8_20\Release\test_8_20.exe
+Manifest:
+  c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\ClassCode\81班\test_8_20\Release\test_8_20.exe;#1" /manifest Release\test_8_20.exe.intermediate.manifest
+FinalizeBuildStatus:
+  正在删除文件“Release\test_8_20.unsuccessfulbuild”。
+  正在对“Release\test_8_20.lastbuildstate”执行 Touch 任务。
+已完成生成项目“C:\ClassCode\81班\test_8_20\test_8_20\test_8_20.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.30
