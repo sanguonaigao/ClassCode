@@ -1,0 +1,16 @@
+﻿生成启动时间为 2019/8/27 12:23:23。
+项目“C:\ClassCode\81班\test_8_27\test_8_27\test_8_27.vcxproj”在节点 2 上(build 个目标)。
+InitializeBuildStatus:
+  正在创建“Release\test_8_27.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt test.c
+  test.c
+test.c(235): warning C4013: “offsetof”未定义；假设外部返回 int
+test.c(235): error C2143: 语法错误 : 缺少“)”(在“类型”的前面)
+test.c(236): error C2143: 语法错误 : 缺少“)”(在“类型”的前面)
+test.c(237): error C2143: 语法错误 : 缺少“)”(在“类型”的前面)
+已完成生成项目“C:\ClassCode\81班\test_8_27\test_8_27\test_8_27.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.84
