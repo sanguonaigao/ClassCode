@@ -64,6 +64,8 @@ void AddContact(Contact* pcon);
 void ShowContact(const Contact* pcon);
 void DelContact(Contact* pcon);
 void DestroyContact(Contact* pcon);
+void SaveContact(Contact* pcon);
+void LoadContact(Contact* pcon);
 
 
 

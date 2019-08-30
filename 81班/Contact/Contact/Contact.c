@@ -2,6 +2,42 @@
 
 #include "Contact.h"
 
+void CheckCapacity(Contact* pcon)
+{
+	if(pcon->sz == pcon->capacity)
+	{
+		//增容
+		PeoInfo* ptr = realloc(pcon->data, (pcon->capacity+2)*sizeof(PeoInfo));
+		if(ptr != NULL)
+		{
+			pcon->data = ptr;
+			pcon->capacity += 2;
+			printf("增容成功\n");
+		}
+	}
+}
+
+void LoadContact(Contact* pcon)
+{
+	PeoInfo tmp = {0};
+	FILE* pfRead = fopen("contact.dat", "rb");
+	if(pfRead == NULL)
+	{
+		printf("加载信息：打开文件失败\n");
+		return;
+	}
+	//加载信息
+	while(fread(&tmp, sizeof(PeoInfo), 1, pfRead))
+	{
+		CheckCapacity(pcon);
+		pcon->data[pcon->sz] = tmp;
+		pcon->sz++;
+	}
+
+	fclose(pfRead);
+	pfRead = NULL;
+}
+
 void InitContact(Contact* pcon)
 {
 	assert(pcon);
@@ -14,6 +50,8 @@ void InitContact(Contact* pcon)
 		return;
 	}
 	pcon->capacity = DEFAULT_SZ;
+	//加载文件
+	LoadContact(pcon);
 }
 
 void DestroyContact(Contact* pcon)
@@ -49,20 +87,7 @@ void DestroyContact(Contact* pcon)
 //	pcon->sz++;
 //	printf("增加成功\n");
 //}
-void CheckCapacity(Contact* pcon)
-{
-	if(pcon->sz == pcon->capacity)
-	{
-		//增容
-		PeoInfo* ptr = realloc(pcon->data, (pcon->capacity+2)*sizeof(PeoInfo));
-		if(ptr != NULL)
-		{
-			pcon->data = ptr;
-			pcon->capacity += 2;
-			printf("增容成功\n");
-		}
-	}
-}
+
 
 void AddContact(Contact* pcon)
 {
@@ -149,7 +174,25 @@ void DelContact(Contact* pcon)
 }
 
 
+void SaveContact(Contact* pcon)
+{
+	int i = 0;
+	FILE* pfWrite = fopen("contact.dat", "wb");
+	if(pfWrite == NULL)
+	{
+		printf("保存信息：打开文件失败\n");
+		return;
+	}
+	//保存信息
+	for(i=0; i<pcon->sz; i++)
+	{
+		fwrite(pcon->data+i, sizeof(PeoInfo), 1, pfWrite);
+	}
 
+	//关闭文件
+	fclose(pfWrite);
+	pfWrite = NULL;
+}
 
 
 

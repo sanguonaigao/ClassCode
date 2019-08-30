@@ -12,6 +12,8 @@ void menu()
 	printf("******************************\n");
 }
 
+//IDE-集成开发环境
+
 int main()
 {
 	int input = 0;
@@ -42,6 +44,7 @@ int main()
 		case SEARCH:
 			break;
 		case EXIT:
+			SaveContact(&con);
 			DestroyContact(&con);
 			printf("退出程序\n");
 			break;
