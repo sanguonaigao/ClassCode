@@ -1,0 +1,13 @@
+﻿生成启动时间为 2019/8/31 12:48:32。
+项目“C:\ClassCode\81班\test.c\test.c\test.c.vcxproj”在节点 2 上(build 个目标)。
+InitializeBuildStatus:
+  正在对“Debug\test_8_31.unsuccessfulbuild”执行 Touch 任务。
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt test.c
+  test.c
+c:\classcode\81班\test.c\test.c\test.c(217): fatal error C1189: #error :  "这是一个错误"
+已完成生成项目“C:\ClassCode\81班\test.c\test.c\test.c.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.91
