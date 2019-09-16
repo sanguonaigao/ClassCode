@@ -40,37 +40,37 @@
 //}
 #include <string.h>
 
-char Find(char arr[])
-{
-	int count[256] = {0};
-	//统计每个字符出现的个数
-	int i = 0;
-	int len = strlen(arr);
-	for(i=0; i<len; i++)
-	{
-		count[arr[i]]++;
-	}
-	//找第一个只出现一次的字符
-	for(i=0; i<len; i++)
-	{
-		if(count[arr[i]] == 1)
-			return arr[i];
-	}
-
-	return -1;//没有
-}
-int main()
-{
-	char arr[] = "aqwrawd";
-	char ret = Find(arr);
-	if(ret == -1)
-	{
-		printf("找不到\n");
-	}
-	else
-	{
-		printf("%c\n", ret);
-	}
-
-	return 0;
-}
+//char Find(char arr[])
+//{
+//	int count[256] = {0};
+//	//统计每个字符出现的个数
+//	int i = 0;
+//	int len = strlen(arr);
+//	for(i=0; i<len; i++)
+//	{
+//		count[arr[i]]++;
+//	}
+//	//找第一个只出现一次的字符
+//	for(i=0; i<len; i++)
+//	{
+//		if(count[arr[i]] == 1)
+//			return arr[i];
+//	}
+//
+//	return -1;//没有
+//}
+//int main()
+//{
+//	char arr[] = "aqwrawd";
+//	char ret = Find(arr);
+//	if(ret == -1)
+//	{
+//		printf("找不到\n");
+//	}
+//	else
+//	{
+//		printf("%c\n", ret);
+//	}
+//
+//	return 0;
+//}
