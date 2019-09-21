@@ -39,8 +39,32 @@
 //	return 0;
 //}
 
-int main}()
+void problem(int* src, long long* dst, int n)
 {
+	int i = 0;
+	dst[0] = 1;
+	//
+	for (i = 1; i < n; ++i)
+	{
+		dst[i] = dst[i - 1] * src[i - 1];
+	}
+
+	for (i = n - 1; i > 0; --i)
+	{
+		dst[i] *= dst[0];
+		dst[0] *= src[i];
+	}
+}
+int main()
+{
+	int i = 0;
+	int arr1[] = {1,2,3,4,5};
+	long long arr2[5] = {0};
+	problem(arr1, arr2, 5);
+	for(i=0; i<5; i++)
+	{
+		printf("%d ", arr2[i]);
+	}
 
 	return 0;
 }
