@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 //
 //void my_strcpy(char* dest, char* src)
 //{
@@ -115,9 +116,102 @@
 //	return x*y;
 //}
 //
+////int main()
+////{
+////	int ret = Add(1, 2);
+////	printf("%d\n", ret);
+////	return 0;
+////}
+////
+////#include <stdio.h>
+////
+////int main()
+////{
+////	int m = 0;
+////	int n = 0;
+////
+////	while(scanf("%d %d", &m ,&n) != EOF)
+////	{
+////		int count = 0;
+////		while(m)
+////		{
+////			count += m%n;
+////			m/=n;
+////		}
+////		printf("%d\n", count);
+////	}
+////
+////	return 0;
+////}
+//
+//
+//#include<stdio.h>
 //int main()
 //{
-//	int ret = Add(1, 2);
-//	printf("%d\n", ret);
+//	unsigned char i=7;
+//	//
+//	int j=0;
+//	for(;i>0;i-=3)
+//	{
+//		++j;
+//	}
+//	printf("%d\n",j);
 //	return 0;
 //}
+
+//
+//void Ts(char * str)
+//{
+//	int i = 0;
+//	int j = 0;
+//	int x =0;
+//	int y = 0;
+//	char arr[10][10] = {0};
+//	while(*str != '\0')
+//	{
+//		if(*str != ' ')
+//			{
+//			 arr[i][j] = *str;
+//			    j++;
+//		    }
+//		if(*str == ' ')
+//			{
+//				i++;
+//				j = 0;
+//		}
+//
+//		*str++;
+//	}
+//	for(x= i;x>=0;j--)
+//	{
+//
+//		for(y =0;y<10;y++)
+//		{
+//			printf("%c",arr[x][y]);
+//		}
+//		printf(" ");
+//	}
+//
+//}
+//int main()
+//{
+//	char str[20] = "I LIKE BEIJ";
+//	Ts(str);
+//	return 0;
+//}
+
+
+
+
+
+
+//10
+//
+//C++- 9
+//JAVA- 8.5
+
+//
+//²âÊÔ¿ª·¢
+//
+//
+

@@ -1,4 +1,4 @@
-﻿生成启动时间为 2019/10/18 20:15:30。
+﻿生成启动时间为 2019/10/20 11:46:16。
 项目“C:\ClassCode\65班\test_10_18\test_10_18\test_10_18.vcxproj”在节点 2 上(build 个目标)。
 InitializeBuildStatus:
   正在创建“Debug\test_10_18.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
@@ -8,14 +8,10 @@ ClCompile:
 Link:
   c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\ClassCode\65班\test_10_18\Debug\test_10_18.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test_10_18.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\ClassCode\65班\test_10_18\Debug\test_10_18.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\ClassCode\65班\test_10_18\Debug\test_10_18.lib" /MACHINE:X86 Debug\test.obj
   LINK : 没有找到 C:\ClassCode\65班\test_10_18\Debug\test_10_18.exe 或上一个增量链接没有生成它；正在执行完全链接
-  test_10_18.vcxproj -> C:\ClassCode\65班\test_10_18\Debug\test_10_18.exe
-Manifest:
-  c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\ClassCode\65班\test_10_18\Debug\test_10_18.exe;#1" /manifest Debug\test_10_18.exe.intermediate.manifest
-FinalizeBuildStatus:
-  正在删除文件“Debug\test_10_18.unsuccessfulbuild”。
-  正在对“Debug\test_10_18.lastbuildstate”执行 Touch 任务。
-已完成生成项目“C:\ClassCode\65班\test_10_18\test_10_18\test_10_18.vcxproj”(build 个目标)的操作。
+MSVCRTD.lib(crtexe.obj) : error LNK2019: 无法解析的外部符号 _main，该符号在函数 ___tmainCRTStartup 中被引用
+C:\ClassCode\65班\test_10_18\Debug\test_10_18.exe : fatal error LNK1120: 1 个无法解析的外部命令
+已完成生成项目“C:\ClassCode\65班\test_10_18\test_10_18\test_10_18.vcxproj”(build 个目标)的操作 - 失败。
 
-生成成功。
+生成失败。
 
-已用时间 00:00:01.08
+已用时间 00:00:04.26
