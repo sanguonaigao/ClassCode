@@ -59,18 +59,37 @@
 
 int main()
 {
-	char input[20] = {0};
-	system("shutdown -s -t 60");
-again:
-	printf("请注意，你的电脑在1分钟内关机，如果输入：我是猪，就取消关机\n");
-	scanf("%s", input);
-	if(strcmp(input, "我是猪") == 0)
-	{
-		system("shutdown -a");
-	}
-	else
-	{
-		goto again;
-	}
+	char a[] = "Xi you linux group";
+	char *b = "Xi you linux group";
+
+	a[5] = '\0';
+	b[5] = '\0';
+	printf("%s\n", a);
+	printf("%s\n", b);
 	return 0;
 }
+
+//int main()
+//{
+//	int arr[] = {0x696c2069, 0x7920656b, 0x2121756f, 0};
+//	printf("%s\n", (char*)arr);
+//	return 0;
+//}
+//
+//int main()
+//{
+//	char input[20] = {0};
+//	system("shutdown -s -t 60");
+//again:
+//	printf("请注意，你的电脑在1分钟内关机，如果输入：我是猪，就取消关机\n");
+//	scanf("%s", input);
+//	if(strcmp(input, "我是猪") == 0)
+//	{
+//		system("shutdown -a");
+//	}
+//	else
+//	{
+//		goto again;
+//	}
+//	return 0;
+//}
