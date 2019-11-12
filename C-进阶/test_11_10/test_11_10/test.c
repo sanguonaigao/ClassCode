@@ -203,27 +203,29 @@
 //	}
 //	return 0;
 //}
-int main()
-{
-	int n = 1;
-	int m = 2;
-	switch (n)
-	{
-	case 1:m++;
-	case 2:n++;
-	case 3:
-		switch (n)
-		{//switch允许嵌套使用
-		case 1:n++;
-		case 2:	m++;n++;break;
-		}
-	case 4:m++;break;
-	default:break;
-	}
-	printf("m = %d, n = %d\n", m, n);
-	//5 3
-	return 0;
-}
+
+//
+//int main()
+//{
+//	int n = 1;
+//	int m = 2;
+//	switch (n)
+//	{
+//	case 1:m++;
+//	case 2:n++;
+//	case 3:
+//		switch (n)
+//		{//switch允许嵌套使用
+//		case 1:n++;
+//		case 2:	m++;n++;break;
+//		}
+//	case 4:m++;break;
+//	default:break;
+//	}
+//	printf("m = %d, n = %d\n", m, n);
+//	//5 3
+//	return 0;
+//}
 
 //
 //int main()
@@ -504,3 +506,75 @@ int main()
 //		printf("登录失败\n");
 //	return 0;
 //}
+//
+//#include <stdio.h>
+//#include <windows.h>
+//
+//void SetPos(int x, int y)
+//{
+//	COORD pos = {0};
+//	HANDLE hOutput = NULL;
+//	pos.X = x;
+//	pos.Y = y;
+//	//获取标准输出的句柄(用来标识不同设备的数值)
+//	hOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+//	//设置标准输出上光标的位置为pos
+//	SetConsoleCursorPosition(hOutput, pos);
+//}
+//							
+//int main()
+//{
+//	int minute = 1;
+//	int second = 1;
+//
+//	while((minute !=0) || (second != 0))
+//	{
+//		SetPos(40, 0);
+//		if(second == 0)
+//		{
+//			if(second<10)
+//			{
+//				printf("%d:0%d\n", minute, second);
+//			}
+//			else
+//			{
+//				printf("%d:%d\n", minute, second);
+//			}
+//			minute--;
+//			second = 59;
+//		}
+//		else
+//		{
+//			if(second<10)
+//			{
+//				printf("%d:0%d\n", minute, second);
+//			}
+//			else
+//			{
+//				printf("%d:%d\n", minute, second);
+//			}
+//			second--;
+//		}
+//		Sleep(1000);
+//	}
+//	return 0;
+//}
+
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	while(scanf("%d%d%d", &a, &b, &c))
+	{
+		if((a+b>c) && (a+c>b) && (b+c>a))
+		{
+			printf("Yes");
+		}
+		else
+		{
+			printf("No");
+		}
+	}
+	return 0;
+}
