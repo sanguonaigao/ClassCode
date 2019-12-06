@@ -1,0 +1,17 @@
+﻿生成启动时间为 2019/12/6 21:17:10。
+项目“C:\ClassCode\C-进阶\test_12_6\test_12_6\test_12_6.vcxproj”在节点 2 上(build 个目标)。
+InitializeBuildStatus:
+  正在对“Debug\test_12_6.unsuccessfulbuild”执行 Touch 任务。
+ClCompile:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt test.c
+  test.c
+c:\classcode\c-进阶\test_12_6\test_12_6\test.c(20): warning C4013: “Add”未定义；假设外部返回 int
+Link:
+  c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\ClassCode\C-进阶\test_12_6\Debug\test_12_6.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test_12_6.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\ClassCode\C-进阶\test_12_6\Debug\test_12_6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\ClassCode\C-进阶\test_12_6\Debug\test_12_6.lib" /MACHINE:X86 Debug\test.obj
+test.obj : error LNK2019: 无法解析的外部符号 _Add，该符号在函数 _main 中被引用
+C:\ClassCode\C-进阶\test_12_6\Debug\test_12_6.exe : fatal error LNK1120: 1 个无法解析的外部命令
+已完成生成项目“C:\ClassCode\C-进阶\test_12_6\test_12_6\test_12_6.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.31
