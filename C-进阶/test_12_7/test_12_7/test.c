@@ -340,17 +340,41 @@
 //	return 0;
 //}
 
-int main()
-{
-	//int arr[10];
-	//arr;//int* 
-	//int(*p)[10] = &arr;//int(*)[10]
+//int main()
+//{
+//	//int arr[10];
+//	//arr;//int* 
+//	//int(*p)[10] = &arr;//int(*)[10]
+//
+//	int arr[5];
+//	int *parr1[10];
+//	int (*parr2)[10];
+//
+//	int (*parr3[10])[5];
+//
+//	return 0;
+//}
+//
+//#include <stdio.h>
+//int sum(int a)
+//{
+//	int c = 0;
+//	static int b = 3;
+//	c += 1;
+//	b += 2;
+//	return (a + b + c);
+//}
+//int main()
+//{
+//	int i;
+//	int a = 2;
+//	for (i = 0; i < 5; i++) 
+//	{ 
+//		printf("%d, ", sum(a)); 
+//	} 
+//	return 0;
+//} 
 
-	int arr[5];
-	int *parr1[10];
-	int (*parr2)[10];
 
-	int (*parr3[10])[5];
 
-	return 0;
-}
+
