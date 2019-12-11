@@ -384,20 +384,38 @@
 //	return 0;
 //}
 
+//
+//int main()
+//{
+//	int n = 0;
+//	int i = 0;
+//	int ret = 1;
+//	int sum = 0;
+//	//1 2 6 = 9
+//	for(n=1; n<=3; n++)
+//	{
+//		ret = ret*n;
+//		sum = sum + ret;
+//	}
+//
+//	printf("sum = %d\n", sum);
+//	return 0;
+//}
 
+#include <stdio.h>
 int main()
 {
-	int n = 0;
-	int i = 0;
-	int ret = 1;
-	int sum = 0;
-	//1 2 6 = 9
-	for(n=1; n<=3; n++)
+	int a = 0, b = 0;
+	for (a = 1, b = 1; a <= 100; a++)
 	{
-		ret = ret*n;
-		sum = sum + ret;
+		if (b >= 20) break;
+		if (b % 3 == 1)
+		{
+			b = b + 3;
+			continue;
+		}
+		b = b-5;
 	}
-
-	printf("sum = %d\n", sum);
+	printf("%d\n", a);
 	return 0;
 }
