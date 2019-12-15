@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+//#define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
 //
@@ -333,5 +333,40 @@
 //	return 0;
 //}
 //
+
+#include <stdio.h>
+int main()
+{  
+	int a ;
+	int b ;
+	int c ;
+	printf("请输入三个整数\n");
+	scanf ("%d %d %d",&a,&b,&c);
+	if (a > b)
+	{
+		if (b > c)
+			printf("%d %d %d", a, b, c);
+		else if (c>a)
+			printf("%d %d %d ", a, c, b);
+	}
+	else
+	{
+		if (c > a)
+		{
+			if (a > b)
+				printf("%d %d %d ", c, a, b);
+			else if (b > a)
+				printf("%d %d %d ", c, b, a);
+		}
+	}
+	if (b >c)
+	{
+		if (c > a)
+			printf("%d %d %d ", b, c, a);
+		else if (b > a)
+			printf("%d %d %d ",b, a, c);
+	} 
+	return 0;
+}
 
 
