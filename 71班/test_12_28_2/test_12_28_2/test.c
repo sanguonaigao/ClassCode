@@ -203,16 +203,75 @@ char* my_strcpy(char* dest,const char* src)
 //}
 //
 //
+//
+//int add(int x, int y)
+//{
+//	return x+y;
+//}
+//
+//
+//int main()
+//{
+//	int ret = add(2, 3);
+//	printf("%d\n", ret);
+//	return 0;
+//}
 
-int add(int x, int y)
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+enum State
 {
-	return x+y;
+	VALID,//0
+	INVALID//1
+};
+enum State state = INVALID;
+int my_atoi(char *str)
+{
+	int flag = 1;
+	long long ret = 0;
+	assert(str);
+	state = INVALID;
+	while(isspace(*str))
+	{
+		str++;
+	}
+	if(*str == '\0')
+	{
+		return 0;
+	}
+	if(*str == '+')
+	{
+		str++;
+	}
+	else if(*str == '-')
+	{
+		flag = -1;
+		str++;
+	}
+	while(isdigit(*str))
+	{
+		ret = ret * 10 + flag * (*str-'0');
+		if((ret > INT_MAX) || (ret < INT_MIN))
+		{
+			return 0;
+		}
+		str++;
+	}
+	if(*str == '\0')
+	{
+		state = VALID;
+		return (int)ret;
+	}
+	else
+	{
+		return (int)ret;
+	}
 }
-
-
 int main()
 {
-	int ret = add(2, 3);
-	printf("%d\n", ret);
+	char *p = "-1212212121212";
+	printf("%d\n", my_atoi(p));
+	system("pause");
 	return 0;
 }
