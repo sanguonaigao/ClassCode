@@ -41,10 +41,10 @@ int main()
 	int num1 = 100;
 	int num2 = 20;
 
-	/*if(num1>num2)
+	if(num1>num2)
 		printf("较大值是：%d\n", num1);
 	else
-		printf("较大值是：%d\n", num2);*/
+		printf("较大值是：%d\n", num2);
 
 	return 0;
 }
