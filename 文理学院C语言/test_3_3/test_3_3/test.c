@@ -34,20 +34,30 @@
 //函数
 //f(x) = x+x;
 //f(x,y) x+y;
+//
+//int main()
+//{
+//	//求两个数的较大值
+//	int num1 = 100;
+//	int num2 = 20;
+//
+//	if(num1>num2)
+//		printf("较大值是：%d\n", num1);
+//	else
+//		printf("较大值是：%d\n", num2);
+//
+//	return 0;
+//}
 
+
+#include <limits.h>
 int main()
 {
-	//求两个数的较大值
-	int num1 = 100;
-	int num2 = 20;
-
-	if(num1>num2)
-		printf("较大值是：%d\n", num1);
-	else
-		printf("较大值是：%d\n", num2);
-
+	int a = -2;
+	int b = -1;
+	a = a+b;
+	b = a-b;
+	a = a-b;
+	printf("a = %d b = %d\n", a,b);
 	return 0;
 }
-
-
-
